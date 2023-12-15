@@ -1,0 +1,98 @@
+<html>
+
+<head>
+    <title>Let Them Cook! - Contact</title>
+
+    <script type="text/javascript">
+        function valid() {
+            var illegalChar = /[`!@#$%^&*()_+\-=\[\]{};:"\\|<>\/?~]/;
+
+            if (illegalChar.test(document.contactForm.request.value)) {
+                alert("NO SPECIAL CHARACTERS ALLOWED")
+                return false;
+            }
+            return true;
+        }
+
+
+    </script>
+    <style>
+    /* The Logo */
+    header {
+        text-align: center;
+        font-size: 50px;
+    }
+
+    /* The Main Nav */
+    #main-nav {
+        background-color: lightblue;
+        font-size: 25px;
+        text-align: center;
+    }
+
+    /* Get's rid of the bullets */
+    #main-nav li {
+        display: inline;
+        position: relative;
+    }
+
+    #main-nav li:hover {
+        background-color: rgb(0, 255, 162);
+        color: rgb(17, 15, 15);
+    }
+
+    #main-nav ul li {
+        display: inline-block;
+        text-align: center;
+        width: 10%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        list-style-type: none;
+    }
+
+    body {
+            background-color: beige;
+    }
+</style>
+</head>
+
+<body>
+    <header>&#127828 Contact &#127859</header>
+    <nav id="main-nav">
+        <a href="index.html">
+            <li>Home</li>
+        </a>
+        <a href="showcase.html">
+            <li>Showcase</li>
+        </a>
+        <a href="about.html">
+            <li>About</li>
+        </a>
+        <a href="contact.html">
+            <li>Contact</li>
+        </a>
+    </nav>
+
+    <form name="contactForm" onsubmit="return(valid())" action="contact_submission.html">
+        <h1>Have Questions? Feel free to reach out! </h1>
+        <div class="information">
+            <div class="name">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="curr-date">
+                <label for="curr-date">Date:</label>
+                <input type="date" id="curr-date" name="curr-date" required>
+            </div>
+            <div class="request">
+                <label for="request">Concern:</label>
+                <textarea id="request" name="request" rows="4" cols="50" required></textarea>
+            </div>
+            <div class="submit">
+                <input type="submit">
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>
