@@ -18,7 +18,8 @@
 
 ##### Located on the showcase page, Coffee API supplies the photos of coffee. Here is a link to their website: https://coffee.alexflipnote.dev/
 
-### There is one known bug, in this application. JOSE write about the bug here.
+### Known Bug
+##
 
 
 
