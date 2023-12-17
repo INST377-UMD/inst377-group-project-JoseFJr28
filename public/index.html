@@ -2,8 +2,10 @@
 <style>
     /* The Logo */
     header {
-        text-align: center;
-        font-size: 50px;
+        text-align:center;
+        margin-left: -300px;
+        font-size: 40px;
+        display: center;
     }
 
     /* The Main Nav */
@@ -69,9 +71,11 @@
     </style>
 
     <script src="foodFetch.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
 
 </head>
 <header>&#127828Let Them Cook!&#127859</header>
+
 <nav id="main-nav">
     <a href="index.html">
         <li>Home</li>
@@ -88,7 +92,13 @@
 </nav>
 
 <body>
-
+<script>let animation = anime({
+    targets: "header",
+    translateX: 250,
+  direction: 'alternate',
+  loop: true,
+  easing: 'cubicBezier(.5, .5, .1, .3)',
+});</script>
     <div id="allergenForm">
         <h3>Enter the barcode number of your product below and select which allergens you have.</h3>
         <p id="warning"><b>WARNING:</b> Do not use this in replacement for real medical advice. This application can have errors!</p>
@@ -125,7 +135,7 @@
             <input type="checkbox" id="gluten" name="gluten" value="gluten">
             <label for="gluten">Gluten </label>
             <br><br>
-            <input type="submit" value="Submit" onclick="tableMaker();return false">
+            <input type="submit" value="Submit" onclick="tableMaker();tableMaker();return false">
             <p>*After first submission you may have to click to submission button twice to get accurate information.</p>
         </form>
     </div>
@@ -150,5 +160,4 @@
     </div>
 
 </body>
-
 </html>
