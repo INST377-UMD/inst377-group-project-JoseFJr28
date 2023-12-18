@@ -11,6 +11,18 @@
                 alert("NO SPECIAL CHARACTERS ALLOWED")
                 return false;
             }
+            const data = new FormData(document.contactForm)
+            fetch(window.location.origin+"/contact",{
+                method:"POST",
+                body: JSON.stringify({
+            "name": `${document.getElementById("name").value}`,
+            "curr-date": `${document.getElementById("curr-date").value}`,
+            "request": `${document.getElementById("request").value}`
+        }),
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
+        }
+            })
             return true;
         }
 
@@ -78,23 +90,19 @@
 
     <form name="contactForm" onsubmit="return(valid())" action="contact_submission.html">
         <h1>Have Questions? Feel free to reach out! </h1>
-        <div class="information">
-            <div class="name">
-                <label for="name">Name:</label>
-                <input type="text" id="name" required>
-            </div>
-            <div class="curr-date">
-                <label for="curr-date">Date:</label>
-                <input type="date" id="curr-date" name="curr-date" required>
-            </div>
-            <div class="request">
-                <label for="request">Concern:</label>
-                <textarea id="request" name="request" rows="4" cols="50" required></textarea>
-            </div>
-            <div class="submit">
-                <input type="submit">
-            </div>
-        </div>
+
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="curr-date">Date:</label>
+        <input type="date" id="curr-date" name="curr-date" required>
+        <br>
+        <label for="request">Concern:</label>
+        <textarea id="request" name="request" rows="4" cols="50" required></textarea>
+        <br>
+        <input type="submit">
+
     </form>
     <script>let animation = anime({
             targets: "header",

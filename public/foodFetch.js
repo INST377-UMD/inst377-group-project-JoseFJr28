@@ -81,7 +81,6 @@ async function tableMaker() {
                 for (let y = 0; y < productAllergens.length; y++) {
                     //if one of chosen allergens are in the products allergens
                     if (data[x] == productAllergens[y]) {
-                        console.log(productAllergens[x])
                         //display is in the table
                         editor.innerHTML += `<tr><td>${productAllergens[y]}</td><td bgcolor="red" style="color: yellow">Yes</td></tr>`
                         //immidiately go to the next allergen because we already confirmed its in product
