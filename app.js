@@ -28,7 +28,6 @@ app.get('/contact', async (req, res) => {
 
 app.post('/contact', async (req, res) => {
     console.log('Adding Concern')
-    console.log(req.body)
     var name = req.body.name;
     var date = req.body['curr-date'];
     var concern = req.body.request;
